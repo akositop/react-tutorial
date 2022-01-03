@@ -1,10 +1,10 @@
 import './ExpenseDate.css'
+import moment from 'moment'
 
 const ExpenseDate = (props) => {
-  //change this to moment.js
-  const month = props.date.toLocaleString("en-US", { month: "long" });
-  const day = props.date.toLocaleString("en-US", { day: "2-digit" });
-  const year = props.date.getFullYear();
+  const month = moment(props.date).format('MMMM'); 
+  const day = moment(props.date).format('DD'); 
+  const year = moment(props.date).format('YYYY'); 
 
   return (
     <div className='expense-date'>
